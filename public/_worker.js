@@ -94,3 +94,40 @@ export function closedPageHTML(todayStr, allowed = ALLOWED_DATES) {
 </body>
 </html>`;
 }
+
+// --- Request handler ----------------------------------------------------
+
+// Clone an asset response, adding security headers and asset cache-control.
+function withHeaders(res, pathname) {
+  const headers = new Headers(res.headers);
+  for (const [k, v] of Object.entries(securityHeaders())) headers.set(k, v);
+  if (pathname === "/" || pathname.endsWith(".html")) {
+    headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+  } else if (pathname.endsWith("favicon.png")) {
+    headers.set("Cache-Control", "public, max-age=86400");
+  }
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+}
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    const today = gmtDateString(new Date());
+    const key = url.searchParams.get("key");
+    const open = (key && key === PREVIEW_KEY) || isAllowed(today);
+
+    if (open) {
+      const assetRes = await env.ASSETS.fetch(request);
+      return withHeaders(assetRes, url.pathname);
+    }
+
+    return new Response(closedPageHTML(today), {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        ...securityHeaders(),
+      },
+    });
+  },
+};
