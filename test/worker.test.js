@@ -10,6 +10,7 @@ import {
 } from "../public/_worker.js";
 
 test("gmtDateString returns YYYY-MM-DD in UTC regardless of time", () => {
+  assert.equal(gmtDateString(new Date("2026-06-08T00:00:00Z")), "2026-06-08");
   assert.equal(gmtDateString(new Date("2026-06-08T13:45:00Z")), "2026-06-08");
   assert.equal(gmtDateString(new Date("2026-06-08T23:59:59Z")), "2026-06-08");
 });

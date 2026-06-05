@@ -13,6 +13,8 @@ export const ALLOWED_DATES = [
 
 // Secret bypass for internal previews: append ?key=<PREVIEW_KEY> to any URL.
 // Rotate by changing this value and redeploying.
+// NOTE: this value lives in source. Treat it as a low-privilege convenience key,
+// not a security secret. Move to a Pages env var if the repo becomes public.
 export const PREVIEW_KEY = "espar-preview-7Qx2Lm9KpV3wZ8Rt5Nf";
 
 // --- Pure helpers (unit tested) -----------------------------------------
