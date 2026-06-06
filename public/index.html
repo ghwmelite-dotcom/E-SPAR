@@ -103,6 +103,9 @@
   .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);box-shadow:none}
   .btn.ghost:hover{background:rgba(255,255,255,.12)}
   .btn.green{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(0,107,63,.35)}
+  /* ghost + green = outline button on the light content area (e.g. footnav "Back") */
+  .btn.ghost.green{background:transparent;color:var(--green-d);border:2px solid var(--green-l);box-shadow:none}
+  .btn.ghost.green:hover{background:#eef4f0;color:var(--green-d);border-color:var(--green)}
   .btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none}
 
   /* grids */
