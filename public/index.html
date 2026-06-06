@@ -336,10 +336,18 @@
   .tcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
   .tcard li{position:relative;padding-left:20px;font-size:13.5px;color:#3a3a3a;line-height:1.5}
   .tcard li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-  .comps{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:10px}
-  .comps .comp{background:#e7f6ec;border:1px solid #bfe3cb;color:var(--green-d);border-radius:99px;
-    padding:7px 14px;font-size:13px;font-weight:600;font-family:'Segoe UI',sans-serif}
-  .cnote{font-size:13px;color:var(--muted);margin:0;line-height:1.55}
+  .cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:760px){.cgrid{grid-template-columns:1fr}}
+  .ccard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;box-shadow:var(--shadow)}
+  .ccard .cch{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .ccard .cn{width:26px;height:26px;border-radius:8px;background:var(--green);color:#fff;flex:none;
+    display:grid;place-items:center;font-size:13px;font-weight:800}
+  .ccard h4{font-family:'Segoe UI',sans-serif;font-size:14.5px;color:var(--green-d);margin:0;flex:1;line-height:1.25}
+  .ccard .crate{flex:none;background:#fff3cf;color:#7a5c00;border:1px solid #ecd98f;border-radius:99px;
+    padding:3px 11px;font-size:12.5px;font-weight:800;font-family:'Segoe UI',sans-serif;white-space:nowrap}
+  .ccard .cdesc{font-size:12.8px;color:#3a3a3a;margin:0 0 8px;line-height:1.5}
+  .ccard .crem{font-size:12.5px;color:var(--muted);margin:0;line-height:1.5}
+  .ccard .crem b{color:var(--green-d)}
   .lpgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(max-width:760px){.lpgrid{grid-template-columns:1fr}}
   .lpcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
@@ -802,15 +810,49 @@
         <!-- Stage 2 · Competencies -->
         <div class="pstage">
           <div class="pst"><div class="stn">2</div><h3>Accept the default competencies</h3></div>
-          <p class="pstsub">The system pre-loads these seven core competencies — review and <b>accept</b> them. They are scored separately and carry 40 of the 100 marks.</p>
-          <div class="comps">
-            <span class="comp">1 · Professionalism</span>
-            <span class="comp">2 · Integrity</span>
-            <span class="comp">3 · Leadership</span>
-            <span class="comp">4 · Organisation &amp; Management</span>
-            <span class="comp">5 · Maximising Productivity / Decision-Making</span>
-            <span class="comp">6 · Teamwork</span>
-            <span class="comp">7 · Communication</span>
+          <p class="pstsub">The system pre-loads these seven core competencies — review and <b>accept</b> them. Each carries a set of descriptions; at End-of-Year your supervisor records how many you demonstrated (competencies are worth 40 of the 100 marks). The <b>X / Y</b> badges and remarks below are example ratings.</p>
+          <div class="cgrid">
+            <div class="ccard">
+              <div class="cch"><div class="cn">1</div><h4>Professionalism</h4><span class="crate">3 / 3</span></div>
+              <p class="cdesc">Technical &amp; supervisory mastery · persistence under difficulty · ownership of results.</p>
+              <p class="crem"><b>Example remark:</b> Consistently delivered to standard and took ownership of results.</p>
+            </div>
+
+            <div class="ccard">
+              <div class="cch"><div class="cn">2</div><h4>Integrity</h4><span class="crate">3 / 3</span></div>
+              <p class="cdesc">Lives Service values · acts without personal gain · resists undue pressure in decisions.</p>
+              <p class="crem"><b>Example remark:</b> Upheld Service values; decisions free of personal interest.</p>
+            </div>
+
+            <div class="ccard">
+              <div class="cch"><div class="cn">3</div><h4>Leadership</h4><span class="crate">2 / 3</span></div>
+              <p class="cdesc">Proactive strategy · empowers others · drives change and improvement.</p>
+              <p class="crem"><b>Example remark:</b> Drove improvements well; can empower the team more. Way forward: delegate stretch tasks.</p>
+            </div>
+
+            <div class="ccard">
+              <div class="cch"><div class="cn">4</div><h4>Organisation &amp; Management</h4><span class="crate">3 / 4</span></div>
+              <p class="cdesc">Clear targets · efficient use of time · manages risk · follows up for results.</p>
+              <p class="crem"><b>Example remark:</b> Met targets and timelines; tighten risk follow-up.</p>
+            </div>
+
+            <div class="ccard">
+              <div class="cch"><div class="cn">5</div><h4>Maximising Productivity / Decision-Making</h4><span class="crate">2 / 3</span></div>
+              <p class="cdesc">Influences events to achieve results · embraces continuous learning · solves problems creatively.</p>
+              <p class="crem"><b>Example remark:</b> Solved problems creatively; pursue more continuous learning.</p>
+            </div>
+
+            <div class="ccard">
+              <div class="cch"><div class="cn">6</div><h4>Teamwork</h4><span class="crate">3 / 3</span></div>
+              <p class="cdesc">Collaborates · values others' input · shares credit and accepts joint responsibility.</p>
+              <p class="crem"><b>Example remark:</b> Collaborated openly and shared credit for results.</p>
+            </div>
+
+            <div class="ccard">
+              <div class="cch"><div class="cn">7</div><h4>Communication</h4><span class="crate">4 / 5</span></div>
+              <p class="cdesc">Speaks &amp; writes clearly · listens · asks clarifying questions · interprets messages correctly · shares information openly.</p>
+              <p class="crem"><b>Example remark:</b> Clear and open; ask more clarifying questions before acting.</p>
+            </div>
           </div>
         </div>
 
