@@ -310,30 +310,46 @@
   .who.app{background:#fff3cf;color:#7a5c00}
   .who.dir{background:#fbe3e6;color:var(--red-d)}
 
-  /* ===== sample targets reference ===== */
+  /* ===== sample data for the practical ===== */
   .targets{margin:4px 0 28px}
   .targets .th{font-size:19px;color:var(--green-d);margin:0 0 4px;padding-left:14px;border-left:4px solid var(--gold)}
-  .targets .sub{font-size:13.5px;color:var(--muted);margin:0 0 14px;padding-left:14px;line-height:1.55}
-  .tflow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px;padding-left:14px}
-  .tflow span{font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px;font-family:'Segoe UI',sans-serif}
-  .tflow .p1{background:#e7f6ec;color:var(--green-d)}
-  .tflow .p2{background:#fff3cf;color:#7a5c00}
-  .tflow .p3{background:#fbe3e6;color:var(--red-d)}
-  .tflow .ar{color:var(--muted);font-weight:800}
+  .targets .sub{font-size:13.5px;color:var(--muted);margin:0 0 6px;padding-left:14px;line-height:1.55}
+  .pstage .pst{display:flex;align-items:center;gap:11px;margin:24px 0 4px}
+  .pstage .pst .stn{width:32px;height:32px;border-radius:9px;background:var(--green-d);color:#fff;display:grid;
+    place-items:center;font-weight:800;font-size:14px;flex:none}
+  .pstage .pst h3{font-size:17px;color:var(--green-d);margin:0}
+  .pstage .pstsub{font-size:13px;color:var(--muted);margin:0 0 14px;padding-left:43px;line-height:1.5}
+  @media(max-width:560px){.pstage .pstsub{padding-left:0}}
+  .tlbl{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--gold-d);font-family:'Segoe UI',sans-serif;margin-bottom:3px}
+  .tlbl2{display:block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--green);font-family:'Segoe UI',sans-serif;margin:2px 0 8px}
   .tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(max-width:760px){.tgrid{grid-template-columns:1fr}}
   .tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
     box-shadow:var(--shadow);transition:.15s}
   .tcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--green-l)}
-  .tcard .tch{display:flex;gap:11px;align-items:flex-start;margin-bottom:12px}
+  .tcard .tch{display:flex;gap:11px;align-items:flex-start;margin-bottom:10px}
   .tcard .tn{width:30px;height:30px;border-radius:9px;background:var(--green);color:#fff;flex:none;
     display:grid;place-items:center;font-size:15px;font-weight:800}
-  .tcard h4{font-family:'Segoe UI',sans-serif;font-size:15.5px;color:var(--green-d);margin:4px 0 0;line-height:1.3}
+  .tcard h4{font-family:'Segoe UI',sans-serif;font-size:15.5px;color:var(--green-d);margin:0;line-height:1.3}
   .tcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
   .tcard li{position:relative;padding-left:20px;font-size:13.5px;color:#3a3a3a;line-height:1.5}
   .tcard li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .comps{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:10px}
+  .comps .comp{background:#e7f6ec;border:1px solid #bfe3cb;color:var(--green-d);border-radius:99px;
+    padding:7px 14px;font-size:13px;font-weight:600;font-family:'Segoe UI',sans-serif}
+  .cnote{font-size:13px;color:var(--muted);margin:0;line-height:1.55}
+  .lpgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:760px){.lpgrid{grid-template-columns:1fr}}
+  .lpcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .lpcard h5{font-family:'Segoe UI',sans-serif;font-size:15px;color:var(--green-d);margin:2px 0 12px;line-height:1.3}
+  .lpmeta{display:grid;gap:10px}
+  .lpmeta>span{font-size:13px;color:#3a3a3a;line-height:1.4}
+  .lpmeta b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;
+    color:var(--muted);font-family:'Segoe UI',sans-serif;margin-bottom:1px}
   .tres{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#f3f9f5;border:1px solid var(--line);
-    border-radius:12px;padding:13px 16px;margin-top:16px}
+    border-radius:12px;padding:13px 16px;margin-top:14px}
   .tres b{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--green-d);font-family:'Segoe UI',sans-serif;margin-right:4px}
   .tres .chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:12.5px;color:#444}
 </style>
@@ -721,64 +737,128 @@
       </div>
 
       <div class="targets">
-        <h3 class="th">Sample targets to use in the practical</h3>
-        <p class="sub">Keep these handy as your reference while you log into the portal and set up the Planning phase. They are example focus areas with SMART targets — enter them in Planning, update their status at Mid-Year, and have them scored at End-of-Year.</p>
-        <div class="tflow">
-          <span class="p1">1 · Planning — enter targets</span>
-          <span class="ar">→</span>
-          <span class="p2">2 · Mid-Year — update status</span>
-          <span class="ar">→</span>
-          <span class="p3">3 · End-of-Year — scored</span>
+        <h3 class="th">Sample data for the practical</h3>
+        <p class="sub">Setting up the Planning phase in the portal has three steps. Use the sample data below as you complete each one.</p>
+
+        <!-- Stage 1 · Targets -->
+        <div class="pstage">
+          <div class="pst"><div class="stn">1</div><h3>Set your targets</h3></div>
+          <p class="pstsub">For each <b>focus area</b>, enter its <b>SMART target(s)</b> and the resources required.</p>
+          <div class="tgrid">
+            <div class="tcard">
+              <div class="tch"><div class="tn">1</div><div><span class="tlbl">Focus area</span><h4>Improving Client Service Delivery</h4></div></div>
+              <span class="tlbl2">Targets</span>
+              <ul>
+                <li>Final draft of the quarterly CSU report submitted to your Supervisor by March, June, September and December.</li>
+                <li>Mid-year and end-of-year CSU reports submitted to the Director by June and December.</li>
+              </ul>
+            </div>
+
+            <div class="tcard">
+              <div class="tch"><div class="tn">2</div><div><span class="tlbl">Focus area</span><h4>Improving Human Resource Management</h4></div></div>
+              <span class="tlbl2">Targets</span>
+              <ul>
+                <li>Draft composite staff performance appraisal reports (planning, mid-year and end-of-year) submitted to your Supervisor by the end of January, July and December.</li>
+                <li>Final draft annual report on staff movement submitted to the Director by December.</li>
+              </ul>
+            </div>
+
+            <div class="tcard">
+              <div class="tch"><div class="tn">3</div><div><span class="tlbl">Focus area</span><h4>Strengthening Performance Reporting</h4></div></div>
+              <span class="tlbl2">Targets</span>
+              <ul>
+                <li>Four (4) quarterly Directorate performance reports drafted and submitted to your Supervisor.</li>
+                <li>Draft Ministry / Department Annual Performance Report submitted to the Director by December.</li>
+              </ul>
+            </div>
+
+            <div class="tcard">
+              <div class="tch"><div class="tn">4</div><div><span class="tlbl">Focus area</span><h4>Implementation of the OHCS Budget</h4></div></div>
+              <span class="tlbl2">Targets</span>
+              <ul>
+                <li>Draft quarterly Budget Implementation reports prepared and submitted to your Supervisor for onward submission to the Ministry of Finance by 1 April, 1 July, 1 September and 1 December.</li>
+              </ul>
+            </div>
+
+            <div class="tcard">
+              <div class="tch"><div class="tn">5</div><div><span class="tlbl">Focus area</span><h4>Implementation of the OHCS SMTDP</h4></div></div>
+              <span class="tlbl2">Targets</span>
+              <ul>
+                <li>Draft quarterly progress reports on SMTDP implementation submitted to your Supervisor for onward submission to the NDPC by May, July, October and January.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tres">
+            <b>Resources you'll typically need</b>
+            <span class="chip">Laptop</span>
+            <span class="chip">Printer</span>
+            <span class="chip">Photocopier</span>
+            <span class="chip">A4 paper</span>
+            <span class="chip">Notepad</span>
+            <span class="chip">Pen / pencil</span>
+          </div>
         </div>
 
-        <div class="tgrid">
-          <div class="tcard">
-            <div class="tch"><div class="tn">1</div><h4>Improving Client Service Delivery</h4></div>
-            <ul>
-              <li>Final draft of the quarterly CSU report submitted to your Supervisor by March, June, September and December.</li>
-              <li>Mid-year and end-of-year CSU reports submitted to the Director by June and December.</li>
-            </ul>
-          </div>
-
-          <div class="tcard">
-            <div class="tch"><div class="tn">2</div><h4>Improving Human Resource Management</h4></div>
-            <ul>
-              <li>Draft composite staff performance appraisal reports (planning, mid-year and end-of-year) submitted to your Supervisor by the end of January, July and December.</li>
-              <li>Final draft annual report on staff movement submitted to the Director by December.</li>
-            </ul>
-          </div>
-
-          <div class="tcard">
-            <div class="tch"><div class="tn">3</div><h4>Strengthening Performance Reporting</h4></div>
-            <ul>
-              <li>Four (4) quarterly Directorate performance reports drafted and submitted to your Supervisor.</li>
-              <li>Draft Ministry / Department Annual Performance Report submitted to the Director by December.</li>
-            </ul>
-          </div>
-
-          <div class="tcard">
-            <div class="tch"><div class="tn">4</div><h4>Implementation of the OHCS Budget</h4></div>
-            <ul>
-              <li>Draft quarterly Budget Implementation reports prepared and submitted to your Supervisor for onward submission to the Ministry of Finance by 1 April, 1 July, 1 September and 1 December.</li>
-            </ul>
-          </div>
-
-          <div class="tcard">
-            <div class="tch"><div class="tn">5</div><h4>Implementation of the OHCS SMTDP</h4></div>
-            <ul>
-              <li>Draft quarterly progress reports on SMTDP implementation submitted to your Supervisor for onward submission to the NDPC by May, July, October and January.</li>
-            </ul>
+        <!-- Stage 2 · Competencies -->
+        <div class="pstage">
+          <div class="pst"><div class="stn">2</div><h3>Accept the default competencies</h3></div>
+          <p class="pstsub">The system pre-loads these seven core competencies — review and <b>accept</b> them. They are scored separately and carry 40 of the 100 marks.</p>
+          <div class="comps">
+            <span class="comp">1 · Professionalism</span>
+            <span class="comp">2 · Integrity</span>
+            <span class="comp">3 · Leadership</span>
+            <span class="comp">4 · Organisation &amp; Management</span>
+            <span class="comp">5 · Maximising Productivity / Decision-Making</span>
+            <span class="comp">6 · Teamwork</span>
+            <span class="comp">7 · Communication</span>
           </div>
         </div>
 
-        <div class="tres">
-          <b>Resources you'll typically need</b>
-          <span class="chip">Laptop</span>
-          <span class="chip">Printer</span>
-          <span class="chip">Photocopier</span>
-          <span class="chip">A4 paper</span>
-          <span class="chip">Notepad</span>
-          <span class="chip">Pen / pencil</span>
+        <!-- Stage 3 · Learning plan -->
+        <div class="pstage">
+          <div class="pst"><div class="stn">3</div><h3>Set your learning plan</h3></div>
+          <p class="pstsub">Also called the <b>learning gap identified</b>. For each gap, record the recommended training, the mode of learning and the date / duration.</p>
+          <div class="lpgrid">
+            <div class="lpcard">
+              <span class="tlbl">Training gap identified</span>
+              <h5>Google IT Support Professional Certificate</h5>
+              <div class="lpmeta">
+                <span><b>Recommended training</b>Continuous Professional Development</span>
+                <span><b>Mode of learning</b>Online</span>
+                <span><b>Date / duration</b>12 weeks</span>
+              </div>
+            </div>
+
+            <div class="lpcard">
+              <span class="tlbl">Training gap identified</span>
+              <h5>360° Leadership</h5>
+              <div class="lpmeta">
+                <span><b>Recommended training</b>Scheme of Service Training</span>
+                <span><b>Mode of learning</b>Online via the Civil Service Training Centre (CSTC)</span>
+                <span><b>Date / duration</b>5 days</span>
+              </div>
+            </div>
+
+            <div class="lpcard">
+              <span class="tlbl">Training gap identified</span>
+              <h5>Report Writing &amp; Records Management</h5>
+              <div class="lpmeta">
+                <span><b>Recommended training</b>Scheme of Service Training</span>
+                <span><b>Mode of learning</b>In-person at the CSTC</span>
+                <span><b>Date / duration</b>5 days</span>
+              </div>
+            </div>
+
+            <div class="lpcard">
+              <span class="tlbl">Training gap identified</span>
+              <h5>Data Analytics for Decision-Making</h5>
+              <div class="lpmeta">
+                <span><b>Recommended training</b>Continuous Professional Development</span>
+                <span><b>Mode of learning</b>Online</span>
+                <span><b>Date / duration</b>8 weeks</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
