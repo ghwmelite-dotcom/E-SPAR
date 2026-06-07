@@ -339,6 +339,18 @@
   .tcard ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
   .tcard li{position:relative;padding-left:20px;font-size:13.5px;color:#3a3a3a;line-height:1.5}
   .tcard li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .tmore{margin-top:14px;border-top:1px dashed var(--line);padding-top:6px}
+  .tmore-h{width:100%;display:flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;
+    font-family:'Segoe UI',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--green);padding:8px 0}
+  .tmore-h:hover{color:var(--green-d)}
+  .tmore-h .tmore-c{background:#eaf5ec;color:var(--green-d);border:1px solid var(--green-l);border-radius:99px;
+    padding:1px 8px;font-size:11px;letter-spacing:0}
+  .tmore-h .tmore-x{margin-left:auto;transition:.25s;color:var(--muted)}
+  .tmore.open .tmore-x{transform:rotate(180deg)}
+  .tmore-b{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .tmore.open .tmore-b{max-height:520px}
+  .tmore-b ul{margin-top:12px}
   .cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(max-width:760px){.cgrid{grid-template-columns:1fr}}
   .ccard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;box-shadow:var(--shadow)}
@@ -754,7 +766,7 @@
         <!-- Stage 1 · Targets -->
         <div class="pstage">
           <div class="pst"><div class="stn">1</div><h3>Set your targets</h3></div>
-          <p class="pstsub">For each <b>focus area</b>, enter its <b>SMART target(s)</b> and the resources required.</p>
+          <p class="pstsub">For each <b>focus area</b>, enter its <b>SMART target(s)</b> and the resources required. Open <b>More practice targets</b> under any focus area for extra examples to set up yourself.</p>
           <div class="tgrid">
             <div class="tcard">
               <div class="tch"><div class="tn">1</div><div><span class="tlbl">Focus area</span><h4>Improving Client Service Delivery</h4></div></div>
@@ -763,6 +775,14 @@
                 <li>Final draft of the quarterly CSU report submitted to your Supervisor by March, June, September and December.</li>
                 <li>Mid-year and end-of-year CSU reports submitted to the Director by June and December.</li>
               </ul>
+              <div class="tmore">
+                <button class="tmore-h" onclick="tmore(this)" aria-expanded="false">More practice targets <span class="tmore-c">+3</span><span class="tmore-x">▾</span></button>
+                <div class="tmore-b"><ul>
+                  <li>Client service charter displayed and the complaints / feedback register reviewed monthly, with a summary of resolutions submitted to your Supervisor by the last working day of each month.</li>
+                  <li>Turnaround time for processing ground-rent payment receipts reduced to within 3 working days, with a compliance report submitted to your Supervisor by March, June, September and December.</li>
+                  <li>At least two (2) sensitisation sessions on stool-land payments held with traditional authorities and rate-payers, with reports submitted to the Director by June and December.</li>
+                </ul></div>
+              </div>
             </div>
 
             <div class="tcard">
@@ -772,6 +792,14 @@
                 <li>Draft composite staff performance appraisal reports (planning, mid-year and end-of-year) submitted to your Supervisor by the end of January, July and December.</li>
                 <li>Final draft annual report on staff movement submitted to the Director by December.</li>
               </ul>
+              <div class="tmore">
+                <button class="tmore-h" onclick="tmore(this)" aria-expanded="false">More practice targets <span class="tmore-c">+3</span><span class="tmore-x">▾</span></button>
+                <div class="tmore-b"><ul>
+                  <li>Updated unit nominal roll and leave roster prepared and submitted to your Supervisor by the end of January, and reviewed at mid-year by July.</li>
+                  <li>All staff e-SPAR planning, mid-year and end-of-year phases completed within the OHCS timelines, with a compliance status report submitted to the Director by February, August and January.</li>
+                  <li>Unit staff training and capacity-building needs compiled into a consolidated learning plan and submitted to HR by the end of February.</li>
+                </ul></div>
+              </div>
             </div>
 
             <div class="tcard">
@@ -781,6 +809,14 @@
                 <li>Four (4) quarterly Directorate performance reports drafted and submitted to your Supervisor.</li>
                 <li>Draft Ministry / Department Annual Performance Report submitted to the Director by December.</li>
               </ul>
+              <div class="tmore">
+                <button class="tmore-h" onclick="tmore(this)" aria-expanded="false">More practice targets <span class="tmore-c">+3</span><span class="tmore-x">▾</span></button>
+                <div class="tmore-b"><ul>
+                  <li>Four (4) quarterly stool-land revenue mobilisation and disbursement reports drafted and submitted to your Supervisor by 15 April, 15 July, 15 October and 15 January.</li>
+                  <li>Monthly data on revenue collected, disbursed and outstanding ground rent compiled and reconciled, with the report submitted to your Supervisor by the 5th working day of the following month.</li>
+                  <li>Draft Directorate Annual Performance Report consolidated and submitted to the Director by the end of January.</li>
+                </ul></div>
+              </div>
             </div>
 
             <div class="tcard">
@@ -789,6 +825,14 @@
               <ul>
                 <li>Draft quarterly Budget Implementation reports prepared and submitted to your Supervisor for onward submission to the Ministry of Finance by 1 April, 1 July, 1 September and 1 December.</li>
               </ul>
+              <div class="tmore">
+                <button class="tmore-h" onclick="tmore(this)" aria-expanded="false">More practice targets <span class="tmore-c">+3</span><span class="tmore-x">▾</span></button>
+                <div class="tmore-b"><ul>
+                  <li>Annual unit budget estimates prepared within the approved ceiling and submitted to your Supervisor by the end of September.</li>
+                  <li>Quarterly budget-versus-actual expenditure variance reports prepared and submitted to your Supervisor by 1 April, 1 July, 1 October and 1 January.</li>
+                  <li>All unit procurement and expenditure processed within the approved budget lines, with a reconciliation statement submitted to the Director by December.</li>
+                </ul></div>
+              </div>
             </div>
 
             <div class="tcard">
@@ -797,6 +841,14 @@
               <ul>
                 <li>Draft quarterly progress reports on SMTDP implementation submitted to your Supervisor for onward submission to the NDPC by May, July, October and January.</li>
               </ul>
+              <div class="tmore">
+                <button class="tmore-h" onclick="tmore(this)" aria-expanded="false">More practice targets <span class="tmore-c">+3</span><span class="tmore-x">▾</span></button>
+                <div class="tmore-b"><ul>
+                  <li>Unit-level annual action plan aligned to the OHCS SMTDP prepared and submitted to your Supervisor by the end of January.</li>
+                  <li>Quarterly progress updates on assigned SMTDP activities compiled and submitted to your Supervisor for onward submission by May, July, October and January.</li>
+                  <li>End-of-year review of SMTDP implementation, with lessons learned and recommendations, submitted to the Director by December.</li>
+                </ul></div>
+              </div>
             </div>
           </div>
           <div class="tres">
@@ -1061,6 +1113,7 @@ function roleTab(btn,id){
 
 /* accordion */
 function acc(el){el.parentElement.classList.toggle('open')}
+function tmore(el){var p=el.parentElement;var o=p.classList.toggle('open');el.setAttribute('aria-expanded',o)}
 
 /* nav toggle (mobile) */
 function toggleNav(){document.getElementById('nav').classList.toggle('open');document.getElementById('scrim').classList.toggle('show')}
