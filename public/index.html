@@ -224,6 +224,11 @@
   @media(max-width:560px){
     .footnav{gap:10px}
     .footnav .btn{flex:1 1 100%;justify-content:center;padding:13px 18px}
+    /* topbar must fit the phone: drop subtitle + % and pin the progress bar to the bottom edge */
+    .brand{min-width:0}
+    .brand small{display:none}
+    #progpct{display:none}
+    #progwrap{position:absolute;left:0;right:0;bottom:0;height:3px;min-width:0;flex:none;border-radius:0}
   }
 
   .proverb{font-style:italic;font-family:Georgia,serif;color:var(--green-d);font-size:16px;
