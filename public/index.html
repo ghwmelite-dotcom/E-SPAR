@@ -408,6 +408,38 @@
     border-radius:12px;padding:13px 16px;margin-top:14px}
   .tres b{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--green-d);font-family:'Segoe UI',sans-serif;margin-right:4px}
   .tres .chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:12.5px;color:#444}
+  /* ===== Mid-Year review (tabbed, portal-mirroring) ===== */
+  .mynote{font-size:13px;color:#6a4a00;background:#fff8e1;border:1px solid #f0dFA0;border-color:#efe0a3;
+    border-radius:10px;padding:11px 14px;margin:0 0 4px;line-height:1.55}
+  .mynote b{color:var(--gold-d)}
+  .mytabs{display:flex;gap:4px;border-bottom:2px solid var(--line);margin:16px 0 0;flex-wrap:wrap}
+  .mytab{appearance:none;background:none;border:0;cursor:pointer;font-family:'Segoe UI',sans-serif;
+    font-size:13.5px;font-weight:700;color:var(--muted);padding:11px 14px;border-bottom:3px solid transparent;
+    margin-bottom:-2px;transition:.15s;border-radius:8px 8px 0 0}
+  .mytab:hover{color:var(--green-d);background:#f3f9f5}
+  .mytab.active{color:var(--green-d);border-bottom-color:var(--green)}
+  .mypanel{display:none;padding-top:18px}
+  .mypanel.active{display:block;animation:fade .4s ease}
+  .myfa{margin-bottom:20px}
+  .myfa-h{font-family:'Segoe UI',sans-serif;font-size:14.5px;color:var(--green-d);font-weight:700;
+    margin:0 0 10px;padding-left:12px;border-left:4px solid var(--gold)}
+  .myhead{display:grid;gap:14px;padding:0 16px 7px;font-family:'Segoe UI',sans-serif;font-size:10.5px;
+    font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--gold-d)}
+  .myrow{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:14px 16px;margin-bottom:10px}
+  .myhead.tgt,.myrow.tgt{grid-template-columns:1.35fr 1fr 1fr}
+  .myhead.cmp,.myrow.cmp{grid-template-columns:1fr 1.1fr 1.1fr}
+  .myhead.lp,.myrow.lp{grid-template-columns:1.15fr .85fr .7fr 1.3fr}
+  .mycell{font-size:13px;color:#3a3a3a;line-height:1.55}
+  .mycell .ml{display:none}
+  .mycell .mtarget{font-weight:600;color:var(--ink)}
+  .mycell .mrem{color:var(--green-d)}
+  @media(max-width:760px){
+    .myhead{display:none}
+    .myrow.tgt,.myrow.cmp,.myrow.lp{grid-template-columns:1fr;gap:11px}
+    .mycell .ml{display:block;font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+      color:var(--gold-d);font-family:'Segoe UI',sans-serif;margin-bottom:3px}
+  }
 </style>
 </head>
 <body>
@@ -1045,6 +1077,165 @@
         </div>
       </div>
 
+      <div class="targets midyear">
+        <h3 class="th">Mid-Year review — sample data</h3>
+        <p class="sub">At mid-year the appraisee updates progress on every target, competency and training. The three tabs below mirror the e-SPAR portal exactly — use them as you complete your own mid-year review.</p>
+        <p class="mynote">✍️ <b>Note on Remarks / Way Forward:</b> although the appraisee types this field, it must read as if written by the <b>appraiser</b> — the supervisor's voice, addressed to the appraisee (e.g. &ldquo;Good progress on collections; tighten arrears follow-up next quarter.&rdquo;).</p>
+
+        <div class="mytabs" role="tablist">
+          <button class="mytab active" role="tab" aria-selected="true" onclick="mytab(this,'my-target')">Target</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'my-comp')">Competencies</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'my-lp')">Status of Learning Plan</button>
+        </div>
+
+        <!-- TARGET -->
+        <div class="mypanel active" id="my-target" role="tabpanel">
+          <div class="myfa">
+            <h4 class="myfa-h">Focus area 1 · Stool Land Revenue Mobilisation</h4>
+            <div class="myhead tgt"><span>Target</span><span>Status of Work</span><span>Remarks / Way Forward</span></div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Quarterly stool-land revenue (ground rent, dues and royalties) collected and lodged, with a mobilisation report submitted to your Supervisor by 15 April, 15 July, 15 October and 15 January.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Q1 and Q2 revenue collected and lodged; Q1 report submitted on 14 April and Q2 on 15 July. Half-year collections stand at 58% of the annual target.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">On track and reports filed on time — well done. Sustain the collection pace and keep the Q3 and Q4 reports to the 15th deadline to close the year above target.</span></div>
+            </div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Outstanding ground-rent arrears reduced by at least 20% against the opening balance, with a recovery status report submitted to the Director by June and December.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Arrears recovery underway; outstanding ground-rent arrears reduced by 12% so far. Mid-year recovery status report submitted to the Director in June.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">A good start, though still short of the 20% mid-point pace. Intensify follow-up on the largest defaulters in Q3 and offer instalment arrangements to reach the target.</span></div>
+            </div>
+          </div>
+
+          <div class="myfa">
+            <h4 class="myfa-h">Focus area 2 · Revenue Disbursement &amp; Accountability</h4>
+            <div class="myhead tgt"><span>Target</span><span>Status of Work</span><span>Remarks / Way Forward</span></div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Stool-land revenues disbursed to beneficiaries in line with the constitutional formula (10% OASL; 25% stool, 20% traditional authority, 55% District Assembly), with a quarterly disbursement statement submitted to your Supervisor by 15 April, 15 July, 15 October and 15 January.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Q1 and Q2 disbursements made to all beneficiaries strictly per the formula; statements submitted on schedule. Every District Assembly and traditional authority received its share.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Disbursements are accurate and timely — commendable. Maintain the formula discipline and file beneficiary acknowledgements for every release in the second half.</span></div>
+            </div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Disbursement accounts reconciled with collections each quarter, with the reconciliation report submitted to the Director by June and December.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Q1 and Q2 disbursement accounts reconciled against collections with no variance; mid-year reconciliation report submitted to the Director in June.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Clean reconciliations with zero variance — exactly the standard required. Keep reconciling promptly after each quarter so the year-end report is straightforward.</span></div>
+            </div>
+          </div>
+
+          <div class="myfa">
+            <h4 class="myfa-h">Focus area 3 · Stool Land Records &amp; Data Management</h4>
+            <div class="myhead tgt"><span>Target</span><span>Status of Work</span><span>Remarks / Way Forward</span></div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Individual stool-land accounts opened and maintained for all identified stools in the operational area, with a coverage status report submitted to your Supervisor by June and December.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Accounts opened for all identified stools; 9 of 11 stool accounts fully updated. Mid-year coverage status report submitted to the Supervisor in June.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Strong coverage at mid-year. Complete the remaining two stool accounts early in Q3 and keep entries current so none falls behind on updates.</span></div>
+            </div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Manual revenue and disbursement records digitised, with at least 80% of active records captured and reported to the Director by December.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Digitisation in progress; 55% of active revenue and disbursement records captured onto the records system to date.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Reasonable progress, but the pace must pick up to reach 80% by December. Prioritise the active-records backlog in Q3 and request data-entry support if needed.</span></div>
+            </div>
+          </div>
+
+          <div class="myfa">
+            <h4 class="myfa-h">Focus area 4 · Stakeholder &amp; Traditional Authority Engagement</h4>
+            <div class="myhead tgt"><span>Target</span><span>Status of Work</span><span>Remarks / Way Forward</span></div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">At least four (4) sensitisation and public-education sessions on stool-land payments and the disbursement formula held with traditional authorities, ratepayers and District Assemblies, with reports submitted to your Supervisor by March, June, September and December.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Two (2) sessions held so far — Q1 with traditional authorities and Q2 with ratepayers and a District Assembly; reports submitted for both quarters.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">On schedule for the four-session target. Ensure the Q3 and Q4 sessions reach the remaining beneficiary Assemblies and document attendance for the file.</span></div>
+            </div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Annual stakeholder forum organised to account to stools and traditional authorities, with a report submitted to the Director by December.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Planning begun; venue and date proposed and beneficiary list drafted. Forum scheduled for the fourth quarter.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Good early planning. Confirm the date and send invitations by the end of Q3 so the forum holds well before the December deadline.</span></div>
+            </div>
+          </div>
+
+          <div class="myfa">
+            <h4 class="myfa-h">Focus area 5 · Corporate Performance, Reporting &amp; Budget</h4>
+            <div class="myhead tgt"><span>Target</span><span>Status of Work</span><span>Remarks / Way Forward</span></div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Four (4) quarterly performance reports on the directorate / unit drafted and submitted to your Supervisor, and the annual performance report submitted to the Director by the end of January.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Q1 and Q2 directorate performance reports drafted and submitted to the Supervisor on time.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Quarterly reporting is consistent and timely. Maintain this through Q3 and Q4 and begin consolidating early for the annual report due in January.</span></div>
+            </div>
+            <div class="myrow tgt">
+              <div class="mycell"><span class="ml">Target</span><span class="mtarget">Quarterly budget implementation reports prepared and submitted to your Supervisor for onward submission by 1 April, 1 July, 1 October and 1 January.</span></div>
+              <div class="mycell"><span class="ml">Status of Work</span>Q1 and Q2 budget implementation reports prepared and submitted by the 1 April and 1 July deadlines; expenditure tracking within the approved lines.</div>
+              <div class="mycell"><span class="ml">Remarks / Way Forward</span><span class="mrem">Budget reporting is on time and within ceiling — well managed. Watch Q3 commitments closely to avoid any year-end overrun.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPETENCIES -->
+        <div class="mypanel" id="my-comp" role="tabpanel">
+          <div class="myhead cmp"><span>Competency</span><span>Progress</span><span>Remarks</span></div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Professionalism</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Consistently meeting standards and taking ownership of assigned work.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">Sound professionalism on show; continue modelling the standard and mentoring junior staff.</span></div>
+          </div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Integrity</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Decisions transparent and free of personal interest, especially on disbursements.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">Integrity is evident in your handling of revenue; maintain this standard in all dealings.</span></div>
+          </div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Leadership</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Coordinating the unit's work well; growing steadily in delegation.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">Leadership is developing well — delegate more stretch tasks to build the team's capacity.</span></div>
+          </div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Organisation &amp; Management</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Targets and timelines largely on track; good use of time.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">Well organised; tighten risk follow-up so deadlines hold even under pressure.</span></div>
+          </div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Maximising Productivity / Decision-Making</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Solving operational problems promptly; output steady through the half-year.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">Productive and resourceful; pursue continuous learning to sharpen decision-making further.</span></div>
+          </div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Teamwork</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Collaborating openly and supporting colleagues across the unit.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">A reliable team player; keep sharing credit and drawing in the quieter members.</span></div>
+          </div>
+          <div class="myrow cmp">
+            <div class="mycell"><span class="ml">Competency</span><span class="mtarget">Communication</span></div>
+            <div class="mycell"><span class="ml">Progress</span>Communicating clearly in writing and in meetings.</div>
+            <div class="mycell"><span class="ml">Remarks</span><span class="mrem">Clear and timely; ask a few more clarifying questions before acting on instructions.</span></div>
+          </div>
+        </div>
+
+        <!-- LEARNING PLAN -->
+        <div class="mypanel" id="my-lp" role="tabpanel">
+          <div class="myhead lp"><span>Programme / Recommended Training</span><span>Mode of Learning</span><span>Date / Duration</span><span>Competency skills demonstrated after learning</span></div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme / Recommended Training</span><span class="mtarget">Google IT Support Professional Certificate</span></div>
+            <div class="mycell"><span class="ml">Mode of Learning</span>Online (CPD)</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>12 weeks · Feb–Apr</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after learning</span><span class="mrem">Completed — now providing first-line IT support and managing the records system with more confidence.</span></div>
+          </div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme / Recommended Training</span><span class="mtarget">360° Leadership</span></div>
+            <div class="mycell"><span class="ml">Mode of Learning</span>Online via the CSTC</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>5 days · May</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after learning</span><span class="mrem">Completed — applying delegation and feedback techniques in supervising the unit.</span></div>
+          </div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme / Recommended Training</span><span class="mtarget">Report Writing &amp; Records Management</span></div>
+            <div class="mycell"><span class="ml">Mode of Learning</span>In-person at the CSTC</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>5 days · scheduled Q3</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after learning</span><span class="mrem">Not yet undertaken — scheduled for the third quarter.</span></div>
+          </div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme / Recommended Training</span><span class="mtarget">Data Analytics for Decision-Making</span></div>
+            <div class="mycell"><span class="ml">Mode of Learning</span>Online (CPD)</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>8 weeks · in progress</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after learning</span><span class="mrem">In progress (week 4 of 8) — beginning to use data summaries in the quarterly reports.</span></div>
+          </div>
+        </div>
+      </div>
+
       <div class="phase">
         <div class="phase-h"><div class="pn" style="background:#1b5fae">0</div><h3>Setup — HR &amp; Director</h3></div>
         <div class="steps">
@@ -1200,6 +1391,13 @@ function roleTab(btn,id){
 /* accordion */
 function acc(el){el.parentElement.classList.toggle('open')}
 function tmore(el){var p=el.parentElement;var o=p.classList.toggle('open');el.setAttribute('aria-expanded',o)}
+function mytab(btn,id){
+  var box=btn.closest('.midyear');
+  box.querySelectorAll('.mytab').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  box.querySelectorAll('.mypanel').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');btn.setAttribute('aria-selected','true');
+  box.querySelector('#'+id).classList.add('active');
+}
 
 /* nav toggle (mobile) */
 function toggleNav(){document.getElementById('nav').classList.toggle('open');document.getElementById('scrim').classList.toggle('show')}
