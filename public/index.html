@@ -219,8 +219,12 @@
   .result.show{display:block}
   .result .score{font-family:Georgia,serif;font-size:64px;color:var(--green-d)}
 
-  .footnav{display:flex;justify-content:space-between;gap:14px;margin-top:34px}
+  .footnav{display:flex;justify-content:space-between;gap:14px;margin-top:34px;flex-wrap:wrap}
   .footnav .btn{flex:0 0 auto}
+  @media(max-width:560px){
+    .footnav{gap:10px}
+    .footnav .btn{flex:1 1 100%;justify-content:center;padding:13px 18px}
+  }
 
   .proverb{font-style:italic;font-family:Georgia,serif;color:var(--green-d);font-size:16px;
     border-left:4px solid var(--gold);padding:6px 0 6px 16px;margin:18px 0}
