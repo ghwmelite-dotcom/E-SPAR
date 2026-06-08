@@ -440,6 +440,32 @@
     .mycell .ml{display:block;font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
       color:var(--gold-d);font-family:'Segoe UI',sans-serif;margin-bottom:3px}
   }
+  /* ===== End-of-Year assessment (6 tabs) ===== */
+  .eytotal{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Segoe UI',sans-serif;
+    font-weight:800;font-size:16px;color:var(--ink);background:#fff8e1;border:1px solid #efe0a3;
+    border-radius:12px;padding:12px 16px;margin:14px 0 0}
+  .eytotal b{color:var(--green);font-size:20px}
+  .eytotal .ts-sub{font-weight:600;font-size:12px;color:var(--muted);margin-left:auto}
+  .eyself{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .eysub{font-family:'Segoe UI',sans-serif;font-size:15px;color:var(--green-d);font-weight:700;
+    margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .eyqa{display:grid;gap:15px}
+  .eyq{font-size:13.5px;color:var(--ink);font-weight:600;margin:0 0 6px;line-height:1.45}
+  .eya{background:#f6f8f5;border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;
+    color:#3a3a3a;line-height:1.5}
+  .eya.rate{display:inline-block;font-weight:800;color:var(--green-d);background:#eaf5ec;border-color:var(--green-l)}
+  .myhead.pa,.myrow.pa{grid-template-columns:1.25fr 1.2fr .55fr 1.2fr}
+  .myhead.ta,.myrow.ta,.myhead.sc2,.myrow.sc2{grid-template-columns:2.4fr 1fr}
+  .myrow.total{grid-template-columns:1fr auto;font-weight:800;background:#f3f9f5;color:var(--green-d)}
+  .myrow .scv{font-weight:800;color:var(--green-d)}
+  .eycomment{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+    padding:16px 18px;font-size:13.5px;color:#3a3a3a;line-height:1.6}
+  .eycomment .who{display:block;font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+    color:var(--gold-d);font-family:'Segoe UI',sans-serif;margin-bottom:8px}
+  @media(max-width:760px){
+    .myrow.pa,.myrow.ta,.myrow.sc2{grid-template-columns:1fr;gap:11px}
+    .eyself{grid-template-columns:1fr;gap:24px}
+  }
 </style>
 </head>
 <body>
@@ -1233,6 +1259,179 @@
             <div class="mycell"><span class="ml">Date / Duration</span>8 weeks · in progress</div>
             <div class="mycell"><span class="ml">Skills demonstrated after learning</span><span class="mrem">In progress (week 4 of 8) — beginning to use data summaries in the quarterly reports.</span></div>
           </div>
+        </div>
+      </div>
+
+      <div class="targets midyear endyear">
+        <h3 class="th">End-of-Year assessment — sample data</h3>
+        <p class="sub">The final stage. The appraisee completes a self-assessment; the appraiser then scores performance on targets (60) and competencies (40), comments on overall performance and updates career development; finally the appraisee logs back in to respond. The six tabs mirror the e-SPAR portal.</p>
+        <div class="eytotal">⭐ Total Score: <b>89.0</b> <span class="ts-sub">Performance on targets (Q) 54.0 / 60 · Competencies (C) 35.0 / 40 = 89 / 100</span></div>
+
+        <div class="mytabs" role="tablist">
+          <button class="mytab active" role="tab" aria-selected="true" onclick="mytab(this,'ey-self')">Self Assessment</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'ey-perf')">Performance Assessment</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'ey-comp')">Competencies</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'ey-appc')">Appraiser's Comments</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'ey-career')">Career Development</button>
+          <button class="mytab" role="tab" aria-selected="false" onclick="mytab(this,'ey-appe')">Appraisee's Comment</button>
+        </div>
+
+        <!-- SELF ASSESSMENT -->
+        <div class="mypanel active" id="ey-self" role="tabpanel">
+          <p class="mynote">👤 Completed by the <b>appraisee</b>. Both Target Assessment and General Assessment must be completed and submitted before the supervisor can access the appraisal.</p>
+          <div class="eyself">
+            <div>
+              <h4 class="eysub">1 · Target Assessment</h4>
+              <div class="myhead ta"><span>Target</span><span>Self-score</span></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Quarterly revenue collected &amp; lodged; reports by the 15th.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">6.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Ground-rent arrears reduced by ≥ 20%.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">5.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Revenues disbursed per the constitutional formula.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">6.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Disbursement accounts reconciled each quarter.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">6.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Stool-land accounts opened &amp; maintained for all stools.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">5.5</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Manual records digitised — ≥ 80% of active records.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">5.5</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Four sensitisation / public-education sessions held.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">6.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Annual stakeholder forum organised.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">5.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Quarterly + annual performance reports submitted.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">6.0</span></div></div>
+              <div class="myrow ta"><div class="mycell"><span class="ml">Target</span>Quarterly budget implementation reports submitted.</div><div class="mycell"><span class="ml">Self-score</span><span class="scv">5.5</span></div></div>
+              <div class="myrow total"><div class="mycell">Total (self-rated)</div><div class="mycell"><span class="scv">56.5 / 60</span></div></div>
+            </div>
+            <div>
+              <h4 class="eysub">2 · General Assessment</h4>
+              <div class="eyqa">
+                <div><p class="eyq">1. On a scale of 1–5, how would you rate your performance during the year?</p><span class="eya rate">4 / 5</span></div>
+                <div><p class="eyq">1b. Give two (2) reasons for the rating selected.</p>
+                  <div class="eya">I met or exceeded most of my targets, including timely revenue mobilisation and fully formula-compliant disbursements.</div>
+                  <div class="eya" style="margin-top:8px">I maintained clean, zero-variance reconciliations and completed professional trainings that improved my output.</div>
+                </div>
+                <div><p class="eyq">2. Indicate any extra work you accomplished in addition to your agreed targets.</p><div class="eya">Reconciled two backlog stool accounts for the regional office and trained a national service person on the records system.</div></div>
+                <div><p class="eyq">3. Which Focus / Work Area did you find most difficult to achieve, and why?</p><div class="eya">Records &amp; Data Management — digitising the manual backlog was time-consuming with limited data-entry support.</div></div>
+                <div><p class="eyq">4. Briefly describe how the training completed / undertaken impacted your work output and the Institution.</p><div class="eya">The IT Support and Data Analytics courses sped up record digitisation and improved the quality of the quarterly reports submitted to management.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PERFORMANCE ASSESSMENT (60) -->
+        <div class="mypanel" id="ey-perf" role="tabpanel">
+          <p class="mynote">🧑‍💼 Completed by the <b>appraiser</b> after the self-assessment is submitted. Performance on targets is worth <b>60 marks (Q)</b>.</p>
+          <div class="myhead pa"><span>Target</span><span>Performance Assessment</span><span>Score Awarded</span><span>Summary of Key Issues Identified &amp; Next Step</span></div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Quarterly revenue collected &amp; lodged; reports by the 15th.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>All four quarterly collections lodged and reports filed on time; annual target exceeded.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.5</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Excellent mobilisation — set a higher stretch target next year.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Ground-rent arrears reduced by ≥ 20%.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>Arrears reduced by 18% against the opening balance — just short of the 20% target.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">4.5</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Good recovery; pursue the remaining large defaulters early next year.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Revenues disbursed per the constitutional formula.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>All disbursements made strictly per the constitutional formula; beneficiaries fully paid.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">6.0</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Exemplary compliance — maintain the standard.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Disbursement accounts reconciled each quarter.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>Every quarter reconciled with zero variance and reported on time.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">6.0</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Standard-setting reconciliation; sustain it.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Stool-land accounts opened &amp; maintained for all stools.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>Accounts opened and kept current for all identified stools.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.5</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Full coverage achieved; keep entries up to date.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Manual records digitised — ≥ 80% of active records.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>78% of active records digitised — marginally below the 80% target.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.0</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Strong effort; clear the backlog in Q1 next year.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Four sensitisation / public-education sessions held.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>All four sensitisation sessions held with documented attendance.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.5</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Well delivered; widen reach to the remaining communities.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Annual stakeholder forum organised.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>Annual stakeholder forum held and reported to the Director.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.0</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Good engagement; plan and confirm earlier next year.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Quarterly + annual performance reports submitted.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>All quarterly reports and the annual report submitted on time.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.5</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Consistent, quality reporting; maintain it.</span></div>
+          </div>
+          <div class="myrow pa">
+            <div class="mycell"><span class="ml">Target</span><span class="mtarget">Quarterly budget implementation reports submitted.</span></div>
+            <div class="mycell"><span class="ml">Performance Assessment</span>Budget reports timely; expenditure kept within the approved ceiling.</div>
+            <div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.5</span></div>
+            <div class="mycell"><span class="ml">Key Issues &amp; Next Step</span><span class="mrem">Sound budget management; monitor Q3 commitments.</span></div>
+          </div>
+          <div class="myrow total"><div class="mycell">Total (Q)</div><div class="mycell"><span class="scv">54.0 / 60</span></div></div>
+        </div>
+
+        <!-- COMPETENCIES (40) -->
+        <div class="mypanel" id="ey-comp" role="tabpanel">
+          <p class="mynote">🧑‍💼 Completed by the <b>appraiser</b>. Up to <b>2 marks per sub-competency</b> demonstrated; the 20 descriptions across the 7 competencies total <b>40 marks (C)</b>.</p>
+          <div class="myhead sc2"><span>Competency</span><span>Score Awarded</span></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Professionalism</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">6.0</span></div></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Integrity</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">6.0</span></div></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Leadership</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">4.0</span></div></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Organisation &amp; Management</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.0</span></div></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Maximising Productivity / Decision-Making</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">4.0</span></div></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Teamwork</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.0</span></div></div>
+          <div class="myrow sc2"><div class="mycell"><span class="ml">Competency</span><span class="mtarget">Communication</span></div><div class="mycell"><span class="ml">Score Awarded</span><span class="scv">5.0</span></div></div>
+          <div class="myrow total"><div class="mycell">Total (C)</div><div class="mycell"><span class="scv">35.0 / 40</span></div></div>
+        </div>
+
+        <!-- APPRAISER'S COMMENTS -->
+        <div class="mypanel" id="ey-appc" role="tabpanel">
+          <div class="eycomment"><span class="who">Appraiser's comment on overall performance</span>A dependable, results-oriented officer who delivered strongly across revenue mobilisation, disbursement and accountability — with exemplary, zero-variance reconciliations throughout the year. Records digitisation fell marginally short of target and should be completed early in the new year. Conduct, integrity and teamwork were commendable. Overall, a very good year's performance.</div>
+        </div>
+
+        <!-- CAREER DEVELOPMENT -->
+        <div class="mypanel" id="ey-career" role="tabpanel">
+          <p class="mynote">🧑‍💼 Completed by the <b>appraiser</b> — capacity built during the year, plus training recommendations for the year ahead.</p>
+          <div class="myhead lp"><span>Programme</span><span>Institution</span><span>Date / Duration</span><span>Competency skills demonstrated after training</span></div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme</span><span class="mtarget">Google IT Support Professional Certificate</span></div>
+            <div class="mycell"><span class="ml">Institution</span>Coursera (online, CPD)</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>12 weeks · Feb–Apr</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after training</span><span class="mrem">Provides first-line IT support and manages the records system independently.</span></div>
+          </div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme</span><span class="mtarget">360° Leadership</span></div>
+            <div class="mycell"><span class="ml">Institution</span>Civil Service Training Centre (CSTC)</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>5 days · May</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after training</span><span class="mrem">Applies delegation and structured feedback in supervising the unit.</span></div>
+          </div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme</span><span class="mtarget">Report Writing &amp; Records Management</span></div>
+            <div class="mycell"><span class="ml">Institution</span>Civil Service Training Centre (CSTC)</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>5 days · September</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after training</span><span class="mrem">Improved the structure, accuracy and clarity of official reports.</span></div>
+          </div>
+          <div class="myrow lp">
+            <div class="mycell"><span class="ml">Programme</span><span class="mtarget">Data Analytics for Decision-Making</span></div>
+            <div class="mycell"><span class="ml">Institution</span>Online (CPD)</div>
+            <div class="mycell"><span class="ml">Date / Duration</span>8 weeks · Sep–Nov</div>
+            <div class="mycell"><span class="ml">Skills demonstrated after training</span><span class="mrem">Uses data summaries to strengthen quarterly reporting and decisions.</span></div>
+          </div>
+          <div class="eycomment" style="margin-top:14px"><span class="who">Training &amp; Development — comments on future training needs</span>Recommend Advanced Records &amp; Information Management and a GIS / land-data course to support stool-land demarcation data in the year ahead. A supervisory-leadership refresher would further strengthen management capacity.</div>
+        </div>
+
+        <!-- APPRAISEE'S COMMENT -->
+        <div class="mypanel" id="ey-appe" role="tabpanel">
+          <p class="mynote">👤 After the appraiser submits, the <b>appraisee</b> logs back in, reviews the scores and the appraiser's comments, then states whether they agree with how they have been assessed.</p>
+          <div class="eycomment"><span class="who">Appraisee's comment</span>I have reviewed my scores and my supervisor's comments and I am in agreement with the assessment. I am grateful for the recognition of my work on revenue and disbursement, and I accept the observation on records digitisation, which I will prioritise and complete in the first quarter of the coming year. I welcome the recommended trainings and look forward to undertaking them.</div>
         </div>
       </div>
 
