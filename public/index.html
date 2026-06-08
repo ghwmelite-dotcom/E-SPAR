@@ -466,6 +466,13 @@
     .myrow.pa,.myrow.ta,.myrow.sc2{grid-template-columns:1fr;gap:11px}
     .eyself{grid-template-columns:1fr;gap:24px}
   }
+  /* ===== site footer credit ===== */
+  #sitefoot{border-top:1px solid var(--line);background:#fff;padding:18px 0;margin-top:10px}
+  #sitefoot .wrap{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;text-align:center}
+  #sitefoot .ff{margin:0;font-family:'Segoe UI',sans-serif;font-size:12.5px;color:var(--muted);line-height:1.6}
+  #sitefoot .ff .team{color:var(--green-d);font-weight:800;letter-spacing:.8px}
+  #sitefoot .ff .team .e{color:var(--gold-d)}
+  #sitefoot .ff .dot{color:var(--gold-d);margin:0 7px;font-weight:700}
 </style>
 </head>
 <body>
@@ -1528,6 +1535,12 @@
 
   </main>
 </div>
+
+<footer id="sitefoot">
+  <div class="wrap">
+    <p class="ff">© 2026 OASL · e-SPAR Interactive Training <span class="dot">·</span> Crafted by the <span class="team">OHCS <span class="e">e-SPAR</span> Team</span></p>
+  </div>
+</footer>
 
 <script>
 /* ====== module config — order = display order, ch = data-ch id ====== */
