@@ -351,6 +351,30 @@
   .tmore-b{max-height:0;overflow:hidden;transition:max-height .3s ease}
   .tmore.open .tmore-b{max-height:520px}
   .tmore-b ul{margin-top:12px}
+  /* SMART vs not demonstration */
+  .smartdemo{background:linear-gradient(180deg,#fbfdfb,#f3f8f3);border:1px solid var(--line);border-radius:16px;
+    padding:20px 20px 10px;margin:6px 0 8px;box-shadow:var(--shadow)}
+  .smartdemo .sdh{display:flex;align-items:center;gap:11px;margin-bottom:4px}
+  .smartdemo .sdh .sdi{width:32px;height:32px;border-radius:9px;background:var(--gold);color:#3a2c00;
+    display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
+  .smartdemo .sdh h3{font-size:17px;color:var(--green-d);margin:0}
+  .smartdemo .sdintro{font-size:13px;color:var(--muted);margin:0 0 14px;padding-left:43px;line-height:1.55}
+  @media(max-width:560px){.smartdemo .sdintro{padding-left:0}}
+  .sdrow{border-top:1px dashed var(--line);padding:14px 0}
+  .sdrow:first-of-type{border-top:0;padding-top:2px}
+  .sdrow .sdfa{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--gold-d);font-family:'Segoe UI',sans-serif;margin-bottom:9px}
+  .sdpair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+  @media(max-width:680px){.sdpair{grid-template-columns:1fr}}
+  .sdcell{border-radius:12px;padding:11px 14px;font-size:13.5px;line-height:1.5}
+  .sdbad{background:#fdf3f2;border:1px solid #f3cfca;color:#7a2e25}
+  .sdgood{background:#eef7ef;border:1px solid #bfe0c4;color:#1f4a2a}
+  .sdcell .sdtag{display:block;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+    font-family:'Segoe UI',sans-serif;margin-bottom:6px}
+  .sdbad .sdtag{color:#b53b2c}
+  .sdgood .sdtag{color:var(--green)}
+  .sdfix{font-size:12px;color:var(--muted);margin:9px 0 0;line-height:1.55}
+  .sdfix b{color:var(--green-d)}
   .cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(max-width:760px){.cgrid{grid-template-columns:1fr}}
   .ccard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;box-shadow:var(--shadow)}
@@ -762,6 +786,57 @@
       <div class="targets">
         <h3 class="th">Sample data for the practical</h3>
         <p class="sub">Setting up the Planning phase in the portal has three steps. Use the sample data below as you complete each one.</p>
+
+        <!-- SMART vs not — teaching demo -->
+        <div class="smartdemo">
+          <div class="sdh"><div class="sdi">★</div><h3>SMART vs not — spot the difference</h3></div>
+          <p class="sdintro">Before you set your own targets, compare the two columns. The left version is too vague to score; the right is <b>SMART</b> — <b>S</b>pecific, <b>M</b>easurable, <b>A</b>chievable, <b>R</b>ealistic and <b>T</b>ime-framed. One example is shown for each focus area.</p>
+
+          <div class="sdrow">
+            <span class="sdfa">1 · Stool Land Revenue Mobilisation</span>
+            <div class="sdpair">
+              <div class="sdcell sdbad"><span class="sdtag">✗ Not SMART</span>Collect revenue and report on it.</div>
+              <div class="sdcell sdgood"><span class="sdtag">✓ SMART</span>Quarterly stool-land revenue (ground rent, dues and royalties) collected and lodged, with a mobilisation report submitted to your Supervisor by 15 April, 15 July, 15 October and 15 January.</div>
+            </div>
+            <p class="sdfix"><b>What was added:</b> exactly what is collected, the action and who receives the report, and quarterly deadlines — making it Measurable and Time-framed.</p>
+          </div>
+
+          <div class="sdrow">
+            <span class="sdfa">2 · Revenue Disbursement &amp; Accountability</span>
+            <div class="sdpair">
+              <div class="sdcell sdbad"><span class="sdtag">✗ Not SMART</span>Make sure disbursements are done properly and on time.</div>
+              <div class="sdcell sdgood"><span class="sdtag">✓ SMART</span>Disbursement accounts reconciled with collections each quarter, with the reconciliation report submitted to the Director by June and December.</div>
+            </div>
+            <p class="sdfix"><b>What was added:</b> “properly / on time” is unverifiable — replaced with a defined task (reconciliation), a frequency, a recipient and dated deadlines.</p>
+          </div>
+
+          <div class="sdrow">
+            <span class="sdfa">3 · Stool Land Records &amp; Data Management</span>
+            <div class="sdpair">
+              <div class="sdcell sdbad"><span class="sdtag">✗ Not SMART</span>Improve record keeping.</div>
+              <div class="sdcell sdgood"><span class="sdtag">✓ SMART</span>Manual revenue and disbursement records digitised, with at least 80% of active records captured and reported to the Director by December.</div>
+            </div>
+            <p class="sdfix"><b>What was added:</b> a measurable threshold (80% of active records) and a clear deadline, so progress can actually be scored.</p>
+          </div>
+
+          <div class="sdrow">
+            <span class="sdfa">4 · Stakeholder &amp; Traditional Authority Engagement</span>
+            <div class="sdpair">
+              <div class="sdcell sdbad"><span class="sdtag">✗ Not SMART</span>Engage stakeholders regularly.</div>
+              <div class="sdcell sdgood"><span class="sdtag">✓ SMART</span>At least four (4) sensitisation sessions on stool-land payments held with traditional authorities and ratepayers, with reports submitted to your Supervisor by March, June, September and December.</div>
+            </div>
+            <p class="sdfix"><b>What was added:</b> “regularly” became a number (4), with the audience, the topic and quarterly dates specified.</p>
+          </div>
+
+          <div class="sdrow">
+            <span class="sdfa">5 · Corporate Performance, Reporting &amp; Budget</span>
+            <div class="sdpair">
+              <div class="sdcell sdbad"><span class="sdtag">✗ Not SMART</span>Submit reports as and when due.</div>
+              <div class="sdcell sdgood"><span class="sdtag">✓ SMART</span>Four (4) quarterly performance reports drafted and submitted to your Supervisor, and the annual performance report submitted to the Director by the end of January.</div>
+            </div>
+            <p class="sdfix"><b>What was added:</b> “as and when due” gave no count or date — replaced with how many reports, to whom, and exact timing.</p>
+          </div>
+        </div>
 
         <!-- Stage 1 · Targets -->
         <div class="pstage">
