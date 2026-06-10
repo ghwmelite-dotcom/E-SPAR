@@ -1,8 +1,5 @@
 {
   "name": "e-spar-training",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "test": "node --test"
-  }
+  "type": "module"
 }
